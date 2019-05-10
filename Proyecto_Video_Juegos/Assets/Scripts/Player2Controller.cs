@@ -8,6 +8,7 @@ public class Player2Controller : MonoBehaviour  {
 	public float moveSpeed;
 	public float jumpForce;
 	//public Rigidbody theRB;
+	private Rigidbody rb2d;
 	public CharacterController controller;
 	public float gravityScale;
 	private Vector3 moveDirection;
@@ -15,11 +16,13 @@ public class Player2Controller : MonoBehaviour  {
 	public float currentHealth;
 	public float maxHealth;
 	public Slider oxigenFill;
+	public Camera cam;
 
 	// Use this for initialization
 	void Start () {
 
 		controller = GetComponent<CharacterController> ();
+		rb2d = GetComponent<Rigidbody>();
 		//theRB = GetComponent<Rigidbody>();
 
 	}
@@ -39,6 +42,7 @@ public class Player2Controller : MonoBehaviour  {
 
 		moveDirection.y = moveDirection.y + (Physics.gravity.y * Time.deltaTime);
 		controller.Move (moveDirection * Time.deltaTime);
+		cam.transform.position = new Vector3(rb2d.transform.position.x, cam.transform.position.y, cam.transform.position.z);
 	}
 
 	public void ChangeHealth(int amount){
