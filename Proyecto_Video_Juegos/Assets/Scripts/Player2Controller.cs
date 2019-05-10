@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Player2Controller : MonoBehaviour  {
@@ -10,6 +11,10 @@ public class Player2Controller : MonoBehaviour  {
 	public CharacterController controller;
 	public float gravityScale;
 	private Vector3 moveDirection;
+	public Slider healthFill;
+	public float currentHealth;
+	public float maxHealth;
+	public Slider oxigenFill;
 
 	// Use this for initialization
 	void Start () {
@@ -34,5 +39,11 @@ public class Player2Controller : MonoBehaviour  {
 
 		moveDirection.y = moveDirection.y + (Physics.gravity.y * Time.deltaTime);
 		controller.Move (moveDirection * Time.deltaTime);
+	}
+
+	public void ChangeHealth(int amount){
+		currentHealth += amount;
+		currentHealth = Mathf.Clamp(currentHealth,0,maxHealth);
+		healthFill.value = currentHealth/maxHealth;
 	}
 }
