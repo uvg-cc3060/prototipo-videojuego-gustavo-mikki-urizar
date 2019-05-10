@@ -594,6 +594,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 281178888}
+
 --- !u!1 &408572260
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,6 +610,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+
 --- !u!224 &408572261
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1435,6 +1437,10 @@ MonoBehaviour:
   jumpForce: 100
   controller: {fileID: 666749629}
   gravityScale: 10
+  healthFill: {fileID: 1336251517}
+  currentHealth: 100
+  maxHealth: 100
+  oxigenFill: {fileID: 0}
 --- !u!143 &666749629
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1533,7 +1539,7 @@ GameObject:
   - component: {fileID: 719949989}
   - component: {fileID: 719949988}
   m_Layer: 5
-  m_Name: HUD2
+  m_Name: HUD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1782,7 +1788,7 @@ GameObject:
   - component: {fileID: 866975986}
   - component: {fileID: 866975985}
   m_Layer: 5
-  m_Name: HUD1
+  m_Name: HUD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
