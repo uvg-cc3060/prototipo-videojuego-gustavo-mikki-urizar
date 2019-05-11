@@ -43,6 +43,22 @@ public class Player1Controller : MonoBehaviour {
 		controller.Move (moveDirection * Time.deltaTime);
 		cam.transform.position = new Vector3(rb2d.transform.position.x, cam.transform.position.y, cam.transform.position.z);
 
+	
+
+		if (Input.GetKeyDown(KeyCode.U) & ((rb2d.transform.position.x > -650) & (rb2d.transform.position.x < -500)) & (rb2d.transform.position.y > 1000) & (rb2d.transform.position.y < 1200)) {
+           Debug.Log("hola");
+           rb2d.transform.position = new Vector3(-151f,-87f,700f);
+//y = -0.26 and -2.94
+           cam.transform.position = new Vector3(rb2d.transform.position.x, -87f, cam.transform.position.z);
+        }
+       /*
+        if (Input.GetKeyDown("") & ((rb2d.transform.position.x > -1.43) & (rb2d.transform.position.x < -0.5) & (rb2d.transform.position.y > -3.50) & (rb2d.transform.position.y < -3.10))) {
+           rb2d.transform.position = new Vector3(-1.07f,-0.64f,0);
+//y = -0.26 and -2.94
+           cam.transform.position = new Vector3(rb2d.transform.position.x, -0.26f, cam.transform.position.z);
+        }
+        */
+
 
 
 
