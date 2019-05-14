@@ -17,12 +17,14 @@ public class Player2Controller : MonoBehaviour  {
 	public float maxHealth;
 	public Slider oxigenFill;
 	public Camera cam;
+    public bool herramienta; 
 
 	// Use this for initialization
 	void Start () {
 
 		controller = GetComponent<CharacterController> ();
 		rb2d = GetComponent<Rigidbody>();
+        herramienta = false;
 		//theRB = GetComponent<Rigidbody>();
 
 	}
@@ -50,4 +52,12 @@ public class Player2Controller : MonoBehaviour  {
 		currentHealth = Mathf.Clamp(currentHealth,0,maxHealth);
 		healthFill.value = currentHealth/maxHealth;
 	}
+    public void agarrarHerramienta()
+    {
+        herramienta = true;
+    }
+    public bool getHerramienta()
+    {
+        return herramienta;
+    }
 }
