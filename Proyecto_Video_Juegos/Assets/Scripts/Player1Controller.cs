@@ -47,11 +47,9 @@ public class Player1Controller : MonoBehaviour {
 
 	
 
-		if (Input.GetKeyDown(KeyCode.U) & ((rb2d.transform.position.x > -650) & (rb2d.transform.position.x < -500)) & (rb2d.transform.position.y > 1000) & (rb2d.transform.position.y < 1200)) {
-           Debug.Log("hola");
-           rb2d.transform.position = new Vector3(-151f,-87f,700f);
-//y = -0.26 and -2.94
-           cam.transform.position = new Vector3(rb2d.transform.position.x, -87f, cam.transform.position.z);
+		if (Input.GetKeyDown(KeyCode.U) & ((rb2d.transform.position.x > 1085) & (rb2d.transform.position.x < 1586) & (rb2d.transform.position.y > 1000) & (rb2d.transform.position.y < 1200))) {
+			rb2d.transform.position = new Vector3(-151f,386f,700f);
+			cam.transform.position = new Vector3(rb2d.transform.position.x, 386f, cam.transform.position.z);
         }
        /*
         if (Input.GetKeyDown("") & ((rb2d.transform.position.x > -1.43) & (rb2d.transform.position.x < -0.5) & (rb2d.transform.position.y > -3.50) & (rb2d.transform.position.y < -3.10))) {
