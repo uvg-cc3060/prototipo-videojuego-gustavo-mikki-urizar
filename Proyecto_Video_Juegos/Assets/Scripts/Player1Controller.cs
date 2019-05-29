@@ -78,12 +78,17 @@ public class Player1Controller : MonoBehaviour {
 		currentHealth += amount;
 		currentHealth = Mathf.Clamp(currentHealth,0,maxHealth);
 		healthFill.value = currentHealth/maxHealth;
+		if (currentHealth == 0) {
+			moveSpeed = 0;
+		}
+
 	}
 	
 	public void ChangeOxigen(){
 		currentOxigen += -1;
 		currentOxigen = Mathf.Clamp(currentOxigen,0,maxOxigen);
 		oxigenFill.value = currentOxigen/maxOxigen;
+
 	}
 	public void velocidad(){
 		if (currentOxigen == 0) {

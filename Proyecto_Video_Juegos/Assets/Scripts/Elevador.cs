@@ -27,7 +27,7 @@ public class Elevador : MonoBehaviour {
 		transform.position = Vector3.MoveTowards(transform.position, pointA.position,Time.deltaTime*30);
 		}
 		
-		print(transform.position);
+		//print(transform.position);
 		
 	}
 }

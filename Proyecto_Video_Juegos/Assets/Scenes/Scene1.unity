@@ -1623,7 +1623,7 @@ MonoBehaviour:
   cam: {fileID: 1105434308}
   herramienta: 0
   helathFill: {fileID: 0}
-  currentOxigen: 10
+  currentOxigen: 100
   maxOxigen: 100
   oxigenFill: {fileID: 1069995492}
 --- !u!143 &666749629

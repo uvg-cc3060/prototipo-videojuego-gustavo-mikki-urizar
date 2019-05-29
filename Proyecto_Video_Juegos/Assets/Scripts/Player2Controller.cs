@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using System;
 
 public class Player2Controller : MonoBehaviour  {
 
@@ -61,6 +62,10 @@ public class Player2Controller : MonoBehaviour  {
 		currentHealth += amount;
 		currentHealth = Mathf.Clamp(currentHealth,0,maxHealth);
 		healthFill.value = currentHealth/maxHealth;
+		if (currentHealth == 0) {
+			moveSpeed = 0;
+		}
+
 	}
 	
 	public void ChangeOxigen(){
