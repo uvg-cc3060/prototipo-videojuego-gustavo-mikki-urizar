@@ -11,12 +11,19 @@ public class Player1Controller : MonoBehaviour {
 	public CharacterController controller;
 	public float gravityScale;
 	private Vector3 moveDirection;
+	
 	public Slider healthFill;
 	public float currentHealth;
 	public float maxHealth;
-	public Slider oxigenFill;
+	
 	public Camera cam;
     public bool herramienta;
+	
+	public Slider helathFill;
+	public float currentOxigen;
+	public float maxOxigen;
+	public Slider oxigenFill;
+	
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +32,7 @@ public class Player1Controller : MonoBehaviour {
 		rb2d = GetComponent<Rigidbody>();
         herramienta = false;
 		//theRB = GetComponent<Rigidbody>();
+		InvokeRepeating("ChangeOxigen", 0.0f, 0.5f);
 		
 	}
 	
@@ -58,8 +66,9 @@ public class Player1Controller : MonoBehaviour {
            cam.transform.position = new Vector3(rb2d.transform.position.x, -0.26f, cam.transform.position.z);
         }
         */
-
-
+		
+		
+		
 
 
 	}
@@ -69,7 +78,13 @@ public class Player1Controller : MonoBehaviour {
 		currentHealth = Mathf.Clamp(currentHealth,0,maxHealth);
 		healthFill.value = currentHealth/maxHealth;
 	}
-
+	
+	public void ChangeOxigen(){
+		currentOxigen += -1;
+		currentOxigen = Mathf.Clamp(currentOxigen,0,maxOxigen);
+		oxigenFill.value = currentOxigen/maxOxigen;
+	}
+	
     public void agarrarHerramienta()
     {
         herramienta = true;
@@ -78,4 +93,6 @@ public class Player1Controller : MonoBehaviour {
     {
         return herramienta;
     }
+	
+
 }

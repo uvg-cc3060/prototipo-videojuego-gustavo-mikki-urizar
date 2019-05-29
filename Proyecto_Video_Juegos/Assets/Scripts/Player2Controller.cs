@@ -15,9 +15,16 @@ public class Player2Controller : MonoBehaviour  {
 	public Slider healthFill;
 	public float currentHealth;
 	public float maxHealth;
-	public Slider oxigenFill;
+
 	public Camera cam;
     public bool herramienta; 
+	
+	public Slider helathFill;
+	public float currentOxigen;
+	public float maxOxigen;
+	public Slider oxigenFill;
+	
+	public GameObject cube;
 
 	// Use this for initialization
 	void Start () {
@@ -26,6 +33,8 @@ public class Player2Controller : MonoBehaviour  {
 		rb2d = GetComponent<Rigidbody>();
         herramienta = false;
 		//theRB = GetComponent<Rigidbody>();
+		InvokeRepeating("ChangeOxigen", 0.0f, 1.5f);
+		cube = GameObject.FindWithTag("Elevador");
 
 	}
 
@@ -52,6 +61,13 @@ public class Player2Controller : MonoBehaviour  {
 		currentHealth = Mathf.Clamp(currentHealth,0,maxHealth);
 		healthFill.value = currentHealth/maxHealth;
 	}
+	
+	public void ChangeOxigen(){
+		currentOxigen += -1;
+		currentOxigen = Mathf.Clamp(currentOxigen,0,maxOxigen);
+		oxigenFill.value = currentOxigen/maxOxigen;
+	}
+	
     public void agarrarHerramienta()
     {
         herramienta = true;
