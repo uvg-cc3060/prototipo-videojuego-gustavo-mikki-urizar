@@ -54,6 +54,7 @@ public class Player2Controller : MonoBehaviour  {
 		moveDirection.y = moveDirection.y + (Physics.gravity.y * Time.deltaTime);
 		controller.Move (moveDirection * Time.deltaTime);
 		cam.transform.position = new Vector3(rb2d.transform.position.x, cam.transform.position.y, cam.transform.position.z);
+		velocidad ();
 	}
 
 	public void ChangeHealth(int amount){
@@ -66,6 +67,11 @@ public class Player2Controller : MonoBehaviour  {
 		currentOxigen += -1;
 		currentOxigen = Mathf.Clamp(currentOxigen,0,maxOxigen);
 		oxigenFill.value = currentOxigen/maxOxigen;
+	}
+	public void velocidad(){
+		if (currentOxigen == 0) {
+			moveSpeed = 100;
+		}
 	}
 	
     public void agarrarHerramienta()

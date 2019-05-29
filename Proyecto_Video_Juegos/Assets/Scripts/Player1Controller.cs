@@ -66,6 +66,7 @@ public class Player1Controller : MonoBehaviour {
            cam.transform.position = new Vector3(rb2d.transform.position.x, -0.26f, cam.transform.position.z);
         }
         */
+		velocidad ();
 		
 		
 		
@@ -83,6 +84,11 @@ public class Player1Controller : MonoBehaviour {
 		currentOxigen += -1;
 		currentOxigen = Mathf.Clamp(currentOxigen,0,maxOxigen);
 		oxigenFill.value = currentOxigen/maxOxigen;
+	}
+	public void velocidad(){
+		if (currentOxigen == 0) {
+			moveSpeed = 50;
+		}
 	}
 	
     public void agarrarHerramienta()
